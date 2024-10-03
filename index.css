@@ -1,0 +1,46 @@
+body{
+    height: 500px;
+}
+
+.contenido{
+    display: flex;
+    flex-direction: row;
+    max-height: 100px;
+}
+
+.contenido2{
+    display: flex;
+    flex-direction: row;
+}
+
+.imagen{
+    width: 55%;   
+}
+
+.imagen img{
+   object-fit: fill;
+   width: 1500px;
+   height: 2000px;
+}
+
+.informacion{
+    margin-top: 80px;
+    padding: 5%;
+    width: 45%;
+}
+
+.censurado{
+    background-color: black;
+    color: white;
+    height: 50px;
+    padding: 8px;
+}
+
+.izda{
+    width: 50%;
+    font-weight: bold;
+}
+
+.dcha {
+    width: 50%;
+}
