@@ -2,6 +2,14 @@ body{
     background-color: rgb(229, 227, 227);
 }
 
+th{
+    text-decoration: overline;
+}
+
+td{
+    text-decoration: underline;
+}
+
 .timeTable-container{
     margin: 4%;
     width: 92%;
@@ -25,7 +33,6 @@ body{
 
 .timeTable1 th{
     border: 1px solid black;
-    background-color: grey;
     padding: 8px;
 }
 
@@ -37,7 +44,10 @@ body{
 }
 
 .white{
-    background-color: white;
+    background-color: black;
+    color: white;
+    font-style: italic;
+    text-decoration: overline;
 }
 
 .green{
