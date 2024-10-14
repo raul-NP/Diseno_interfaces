@@ -1,0 +1,50 @@
+/* Colores distintos en cada elemento
+Que ocupe toda la pantalla completa en total */
+
+@font-face {
+    font-family: 'Jetbrains';
+    src: url(../ttf/JetBrainsMonoNL-Regular.ttf);
+}
+
+*{
+    font-family: 'Jetbrains';
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+}
+
+header{
+    height: 20vh;
+    background-color: aliceblue;
+}
+
+nav{
+    height: 20vh;
+    background-color: aqua;
+}
+
+aside{
+    height: 40vh;
+    width: 20%;
+    background-color: cornflowerblue;
+    float: left;
+}
+
+section{
+    height: 40vh;
+    background-color: blueviolet;
+}
+
+article{
+    height: 18.25vh;
+    background-color: darkviolet;
+}
+
+footer{
+    height: 20vh;
+    background-color: darkmagenta;
+}

@@ -1,0 +1,30 @@
+/* Afecta a todos los elementos */
+*{
+    color: white;
+}
+
+body{
+    /* Los width de todos los elementos son automaticos */
+    background-color: blue;
+    height: 100vh;
+    margin: 0;
+}
+
+header{
+    height: 10vh;
+}
+
+article{
+    /* border: red solid 1px; */
+    background-color: red;
+    background-image: url(../img/leyendaApex.jpg);
+    height: 80vh;
+}
+
+p{
+    margin: 0;
+}
+
+footer{
+    height: 10vh;
+}
