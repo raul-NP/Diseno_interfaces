@@ -36,15 +36,26 @@ aside{
 
 section{
     height: 40vh;
+    width: 80%;
     background-color: blueviolet;
+    float: left;
 }
 
+/* 
+    Se realiza porque están al mismo nivel
+    section, aside{
+    height: 80vh;
+} */
+
 article{
-    height: 18.25vh;
+    height: 33vh;
     background-color: darkviolet;
+    width: 50%;
+    float: right;
 }
 
 footer{
     height: 20vh;
     background-color: darkmagenta;
+    clear: both;
 }
