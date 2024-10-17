@@ -1,9 +1,32 @@
 /* Colores distintos en cada elemento
 Que ocupe toda la pantalla completa en total */
+/* EJERCICIOS 3,4,5,7,12 DEL AULA */
 
 @font-face {
     font-family: 'Jetbrains';
     src: url(../ttf/JetBrainsMonoNL-Regular.ttf);
+}
+
+/* Cuando es una tablet */
+@media screen and (max-width: 1000px){
+
+    article{
+        width: 100%;
+    }
+
+}
+
+/* Para móvil */
+@media screen and (max-width: 600px){
+
+    aside{
+        height: 10vh;
+        width: 100%;
+    }
+    section{
+        width: 100%;
+    }
+
 }
 
 *{
@@ -25,6 +48,7 @@ header{
 nav{
     height: 20vh;
     background-color: aqua;
+    display: flex;
 }
 
 aside{
