@@ -1,0 +1,86 @@
+nav{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: 30%;
+}
+
+.logo img{
+    width: 27%;
+    padding: 0.7em;
+}
+
+.menu{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: medium;
+    align-items: center;
+}
+
+.menu button{
+    border: none;
+    background-color: white;
+    color: rgb(167, 166, 166);
+}
+
+.menu-descargar{
+    border-left: 1px solid #C5C5C5;
+    border-right: 1px solid #C5C5C5;
+    width: 20%;
+    text-align: center;
+}
+
+.sesion{
+    width: 30%; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.sesion-unirse{
+    background-color: white;
+    color: rgba(48, 48, 48, 0.9);
+    border: none;
+    padding: 1em 2em 1em 2em;
+    border-radius: 2em;
+    font-weight: bold;
+    font-size: large;
+}
+
+/* En caso de tener el mouse encima rgb(59 130 246 / 0.5) */
+.sesion-iniciar{
+    background-color: white;
+    color: #0a66c2;
+    border: 2px solid #0a66c2;
+    padding: 1em 2em 1em 2em;
+    border-radius: 2em;
+    font-weight: bold;
+    font-size: large;
+}
+
+section{
+    width: 65%;
+    float: left;
+}
+
+.perfil, .cursos{
+    margin: 1.2em;
+    background-color: black;
+    height: calc(100% - 2.4em);
+    width: calc(100% - 2.4em);
+    border-radius: 0.5em;
+}
+
+aside{
+    width: 35%;
+    float: right;
+}
+
+section, aside{
+    height: 70vh;
+}
