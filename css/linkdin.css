@@ -2,6 +2,8 @@ nav{
     height: 10vh;
     display: flex;
     align-items: center;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
 
 .logo{
@@ -28,11 +30,22 @@ nav{
     color: rgb(167, 166, 166);
 }
 
+.menu img{
+    width: 1.8em;
+    margin-bottom: -0.5em;
+}
+
 .menu-descargar{
     border-left: 1px solid #C5C5C5;
     border-right: 1px solid #C5C5C5;
     width: 20%;
+    max-height: 4.2em;
     text-align: center;
+}
+
+.menu-personas button{
+    border-bottom: 2.2px solid black;
+    color: #000000;
 }
 
 .sesion{
@@ -70,10 +83,46 @@ section{
 
 .perfil, .cursos{
     margin: 1.2em;
-    background-color: black;
+    background-color: white;
+    border: 1px solid #ebebeb;
     height: calc(100% - 2.4em);
     width: calc(100% - 2.4em);
     border-radius: 0.5em;
+}
+
+.perfil-fondo img{
+    width: 100%;
+    border-radius: 0.5em;
+}
+
+
+.perfil-top{
+
+
+}
+
+
+.perfil-foto{
+    background-color: white;
+    margin: 0.5em;
+    padding: 0.5em;
+    border: 5px solid #5460bd;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 17em;
+}
+
+.perfil-foto img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.cursos{
+    border: none;
 }
 
 aside{
@@ -82,5 +131,5 @@ aside{
 }
 
 section, aside{
-    height: 70vh;
+    height: 80vh;
 }
