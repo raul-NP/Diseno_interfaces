@@ -92,33 +92,68 @@ section{
 
 .perfil-fondo img{
     width: 100%;
-    border-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
 }
-
 
 .perfil-top{
-
-
-}
-
-
-.perfil-foto{
-    background-color: white;
-    margin: 0.5em;
-    padding: 0.5em;
-    border: 5px solid #5460bd;
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-
+    background-color: white;
+    
+    /* Para cuadrarlos */
+    margin-left: 2em;
     position: absolute;
     top: 17em;
 }
 
-.perfil-foto img{
-    border-radius: 50%;
+.perfil-foto{
     width: 150px;
     height: 150px;
+    border-radius: 50%;
+    background-color: white;
+    border: 5px solid #5460bd;
+
+    /* Para cuadrarlos */
+    margin: 0.4em;
+    padding: 0.3em;
+    position: relative;
+}
+
+.perfil-foto img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.perfil-notificaciones{
+    background-color: #000000;
+    height: 14%;
+}
+
+.perfil-informacion{
+    background-color: pink;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+}
+
+.perfil-informacion-izquierda{
+    width: 60%;
+    height: 100%;
+}
+
+.perfil-informacion-derecha{
+    width: 40%;
+    height: 100%;
+}
+
+.perfil-footer{
+    background-color: #5460bd;
+    height: 16%;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
 }
 
 .cursos{
