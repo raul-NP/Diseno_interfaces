@@ -1,0 +1,37 @@
+.container{
+    width: 650px;
+    height: 650px;
+    border: solid 1px black;
+    justify-self: center;
+    margin-top: 75px;
+
+    position: relative;
+}
+
+img{
+    width: 650px;
+    height: 650px;
+    object-fit: cover;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.fondo{
+    z-index: 1;
+}
+
+.corredera {         
+    z-index: 2;
+    transition: left 1.5s ease; 
+    position: relative;
+    left: -300px;
+}
+.container:hover .corredera {
+    left: -30px;
+}
+
+.fija{
+    z-index: 3;
+}
