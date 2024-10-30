@@ -1,0 +1,135 @@
+body{
+    margin: 0;
+}
+
+.container{
+    background-color: black;
+    width: 1536px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container *{
+    position: absolute;
+}
+
+#nombre{
+    color: #7c5e42;
+    top: 355px;
+    left: -155px;
+    letter-spacing: 10px;
+    rotate: -90deg;
+    z-index: 3;
+}
+
+#asignatura{
+    color: #7c5e42;
+    top: 360px;
+    right: -270px;
+    letter-spacing: 10px;
+    rotate: -90deg;
+    z-index: 3;
+}
+
+#margen-izq{
+    left: 44px;
+    height: 100vh;
+    z-index: 2;
+}
+
+#fondo{
+    height: 100vh;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+#margen-dcho{
+    right: 44px;
+    height: 100vh;
+    z-index: 2;
+}
+
+#ojo-izq{
+    width: 80px;
+    bottom: 50px;
+    left: 252px;
+    z-index: 4;
+    opacity: 1;
+    transition: ease 0.5s;
+    transition-delay: 0.8s;
+}
+#ojo-izq:hover{
+    opacity: 0;
+    transition-delay: 0s;
+}
+
+#ojo-medio{
+    width: 90px;
+    bottom: 20px;
+    left: 390px;
+    z-index: 4;
+    opacity: 1;
+    transition: ease 0.6s;
+    transition-delay: 1.4s;
+}
+#ojo-medio:hover{
+    opacity: 0;
+    transition-delay: 0s;
+}
+
+#ojo-dcho{
+    width: 130px;
+    bottom: 60px;
+    right: 190px;
+    z-index: 4;
+    opacity: 1;
+    transition: ease 0.4s;
+    transition-delay: 1.2s;
+}
+#ojo-dcho:hover{
+    opacity: 0;
+    transition-delay: 0s;
+}
+
+#calabaza{
+    width: 236px;
+    bottom: 143px;
+    right: 357.5px;
+    z-index: 4;
+    transition: ease 1s;
+}
+#calabaza:hover{
+    bottom: 200px;
+}
+
+.luna{
+    width: 120px;
+    top: 250px;
+    right: 740px;
+}
+
+#luna{
+    width: 120px;
+    z-index: 4;
+    transition: ease-in 1s;
+    transition-delay: 0.2s;
+}
+.luna:hover #luna{
+    scale: 0;
+    rotate: 360deg;
+}
+
+#luna-llena{
+    opacity: 0;
+    scale: 0.2;
+    width: 130px;
+    z-index: 4;
+    transition: ease-out 0.4s;
+}
+.luna:hover #luna-llena{
+    opacity: 1;
+    scale: 1;
+    rotate: 360deg;
+    transition-delay: 1.2s;
+}
