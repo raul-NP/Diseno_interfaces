@@ -38,6 +38,19 @@ body{
     z-index: 2;
 }
 
+#arañas-izq{
+    opacity: 0;
+    rotate: 45deg;
+    width: 120px;
+    top: -15px;
+    left: 205px;
+    z-index: 4;
+    transition: ease 1s;
+}
+#arañas-izq:hover{
+    opacity: 1;
+}
+
 #fondo{
     height: 100vh;
     border-radius: 10px;
@@ -101,6 +114,26 @@ body{
 }
 #calabaza:hover{
     bottom: 200px;
+}
+
+#nube{
+    width: 407px;
+    left: 450px;
+    top: 70px;
+    z-index: 4;
+    transition: ease 1s;
+    transition-delay: 0.5s;
+}
+#nube:hover{
+    left: 600px;
+    transition-delay: 0s;
+}
+
+#bruja{
+    left: 675px;
+    top: 80px;
+    width: 75px;
+    z-index: 3;
 }
 
 .luna{
