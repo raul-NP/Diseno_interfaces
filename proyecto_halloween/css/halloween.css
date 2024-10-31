@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Halloween';
+    src: url(../ttf/Scary\ Halloween\ Font.ttf);
+}
+
 body{
     margin: 0;
 }
@@ -15,18 +20,20 @@ body{
 }
 
 #nombre{
+    font-family: 'Halloween';
     color: #7c5e42;
     top: 355px;
-    left: -155px;
+    left: -165px;
     letter-spacing: 10px;
     rotate: -90deg;
     z-index: 3;
 }
 
 #asignatura{
+    font-family: 'Halloween';
     color: #7c5e42;
     top: 360px;
-    right: -270px;
+    right: -260px;
     letter-spacing: 10px;
     rotate: -90deg;
     z-index: 3;
@@ -35,7 +42,32 @@ body{
 #margen-izq{
     left: 44px;
     height: 100vh;
-    z-index: 2;
+    z-index: 8;
+}
+
+#casa{
+    width: 453px;
+    bottom: 88px;
+    left: 151px;
+    z-index: 6;
+}
+
+#puerta{
+    width: 110px;
+    left: 330px;
+    bottom: 100px;
+    z-index: 5;
+    transition: ease 1.5s;
+}
+#casa:hover~#puerta{
+    bottom: 250px;
+}
+
+#esqueleto{
+    width: 130px;
+    left: 315px;
+    bottom: 110px;
+    z-index: 4;
 }
 
 #arañas-izq{
@@ -46,9 +78,26 @@ body{
     left: 205px;
     z-index: 4;
     transition: ease 1s;
+    transition-delay: 0.4s;
 }
 #arañas-izq:hover{
     opacity: 1;
+    transition-delay: 0s;
+}
+
+#arañas-dcha{
+    opacity: 0;
+    rotate: 45deg;
+    width: 200px;
+    top: 15px;
+    right: 170px;
+    z-index: 4;
+    transition: ease 1s;
+    transition-delay: 0.6s;
+}
+#arañas-dcha:hover{
+    opacity: 1;
+    transition-delay: 0s;
 }
 
 #fondo{
@@ -67,7 +116,7 @@ body{
     width: 80px;
     bottom: 50px;
     left: 252px;
-    z-index: 4;
+    z-index: 7;
     opacity: 1;
     transition: ease 0.5s;
     transition-delay: 0.8s;
@@ -105,16 +154,73 @@ body{
     transition-delay: 0s;
 }
 
+#fantasma1{
+    scale: 1s;
+    height: 100px;
+    width: 100px;
+    bottom: 100px;
+    right: 650px;
+    z-index: 4;
+    opacity: 0;
+    transition: ease-in 0.2s;
+}
+#fantasma1:hover{
+    scale: 1.5;
+    bottom: 150px;
+    height: 200px;
+    opacity: 1;
+}
+
+#fantasma2{
+    width: 100px;
+    height: 100px;
+    bottom: 120px;
+    left: 625px;
+    z-index: 4;
+    opacity: 0;
+    transition: ease-in 0.5s;
+}
+#fantasma2:hover{
+    scale: 1.5;
+    bottom: 175px;
+    height: 200px;
+    opacity: 1;
+}
+
+#chuches1{
+    width: 90px;
+    bottom: 160px;
+    right: 357.5px;
+    z-index: 4;
+}
+#chuches2{
+    width: 90px;
+    bottom: 160px;
+    right: 410px;
+    rotate: 20deg;
+    z-index: 4;
+}
+#chuches3{
+    width: 90px;
+    bottom: 175px;
+    right: 470px;
+    z-index: 4;
+}
+
 #calabaza{
     width: 236px;
     bottom: 143px;
     right: 357.5px;
     z-index: 4;
+    rotate: 0deg;
     transition: ease 1s;
 }
 #calabaza:hover{
-    bottom: 200px;
+    rotate: 40deg;
+    bottom: 230px;
+    right: 320px;
 }
+
 
 #nube{
     width: 407px;
