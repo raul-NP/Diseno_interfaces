@@ -1,21 +1,44 @@
-// Array con los ids de las imágenes y sus rutas de sonido
-const elementosConSonido = [
-    { id: 'imagen1', sonido: '../sound/' },
-    { id: 'imagen2', sonido: '../sound/' },
-    { id: 'imagen3', sonido: '../sound/' }
-];
+document.addEventListener("DOMContentLoaded", () => {
 
-//Agregamos Eventos (sonidos) de hover de ratón para cada imágen
-elementosConSonido.forEach(elemento => {
+    //Objeto con los ids de las imágenes y sus rutas de sonido
+    const imagenesConRuta = [
+        { id: 'arañas-izq', sonido: './sound/arañas.mp3' },
+        { id: 'arañas-dcha', sonido: './sound/arañas.mp3' },
+        { id: 'calabaza', sonido: './sound/calabaza.mp3' },
+        { id: 'casa', sonido: './sound/esqueleto.mp3' },
+        { id: 'fantasma2', sonido: './sound/fantasma_izq.mp3' },
+        { id: 'fantasma1', sonido: './sound/fantasma_dcha.mp3' },
+        { id: 'luna', sonido: './sound/luna.mp3' },
+        { id: 'ojo-izq', sonido: './sound/ojos.mp3' },
+        { id: 'ojo-medio', sonido: './sound/ojos.mp3' },
+        { id: 'ojo-dcho', sonido: './sound/ojos.mp3' },
+        { id: 'nube', sonido: './sound/witch.mp3' }
+    ];
 
-    //Seleccionamos imagen y su sonido por el id
-    const imagen = document.getElementById(elemento.id);
-    const sonido = new Audio(elemento.sonido);
+    //Agregamos eventos de hover para cada imagen
+    imagenesConRuta.forEach(elemento => {
+        
+        const sonido = new Audio(elemento.sonido);
+        let imagen;
 
-    imagen.addEventListener('mouseenter', () => {
-        sonido.play();
+        //Arreglo para que funcione en el div de la luna
+        if (elemento.id == 'luna'){
+            imagen = document.querySelector('.luna');
+        }else{
+            imagen = document.getElementById(elemento.id);
+        }
+        
+        imagen.addEventListener('mouseenter', () => sonido.play());
+        imagen.addEventListener('mouseleave', () => {
+            sonido.pause();
+            sonido.currentTime = 0;
+        });
     });
-    imagen.addEventListener('mouseleave', () => {
-        sonido.pause();
-    });
+
+    //Sonido de fondo en bucle
+    const sonidoFondo = new Audio('./sound/fondo.mp3');
+    sonidoFondo.loop = true;
+    document.addEventListener('click', () => {
+        sonidoFondo.play();
+    }); 
 });

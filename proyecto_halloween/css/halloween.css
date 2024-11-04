@@ -213,7 +213,7 @@ body{
     right: 357.5px;
     z-index: 4;
     rotate: 0deg;
-    transition: ease 1s;
+    transition: ease 1.3s;
 }
 #calabaza:hover{
     rotate: 40deg;
