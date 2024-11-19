@@ -21,6 +21,7 @@ body{
     animation-duration: 0.5s;
     animation-delay: 2.7s;
     animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
 
 #coche{
@@ -31,6 +32,7 @@ body{
     animation-duration: 3s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
 
 #articuno{
@@ -40,6 +42,7 @@ body{
     animation-name: volarArticuno;
     animation-duration: 3s;
     animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
 
 #moltress{
@@ -48,6 +51,7 @@ body{
     animation-name: volarMoltress;
     animation-duration: 2.3s;
     animation-fill-mode: forwards;
+    animation-play-state: paused;
 }   
 
 #zapdos{
@@ -56,6 +60,7 @@ body{
     animation-name: volarZapdos;
     animation-duration: 1.2s;
     animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
 
 #cono1, #cono2, #cono3, #cono4{
@@ -64,6 +69,7 @@ body{
     animation-name: caida, levantamiento;
     animation-duration: 0.7s;
     animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
 
 #cono1{
@@ -93,6 +99,7 @@ body{
     animation-name: diglet1;
     animation-duration: 1.2s;
     animation-iteration-count: infinite;
+    animation-play-state: paused;
 }
 #hoyo1{
     bottom: 190px;
@@ -106,6 +113,7 @@ body{
     animation-name: diglet2;
     animation-duration: 0.8s;
     animation-iteration-count: infinite;
+    animation-play-state: paused;
 }
 #hoyo2{
     bottom: 170px;
@@ -119,6 +127,7 @@ body{
     animation-name: diglet1;
     animation-duration: 1.4s;
     animation-iteration-count: infinite;
+    animation-play-state: paused;
 }
 #hoyo3{
     bottom: 190px;
@@ -139,6 +148,7 @@ body{
     animation-delay: 2.6s;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
 
 #explosion{
@@ -152,15 +162,17 @@ body{
     animation-duration: 1.3s;
     animation-delay: 2.6s;
     animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
 
 #sol{
     z-index: 0;
-    top: 464px;
+    top: 465px;
     left: 650px;
     animation-name: cambioColor;
     animation-duration: 2.6s;
     animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
 
 @keyframes mover {
