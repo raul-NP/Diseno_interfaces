@@ -1,0 +1,90 @@
+body{
+    margin: 0;
+}
+
+#fondo{
+    background-image: url(./img/fondo.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+#coche{
+    position: absolute;
+    bottom: 20px;
+    animation-name: mover;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    /* animation-iteration-count: 1; */
+}
+
+#palmera img{
+    z-index: 2;
+    position: absolute;
+    width: 400px;
+    right: 100px;
+    bottom: 60px;
+}
+
+#coco-1{
+    z-index: 1;
+    position: absolute;
+    right: 350px;
+    bottom: 400px;
+    animation-duration: 1s;
+    animation-delay: 2.2s;
+    animation-name: caidaCoco1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+#coco-2{
+    position: absolute;
+    z-index: 1;
+    right: 230px;
+    bottom: 400px;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-name: caidaCoco2;
+    animation-fill-mode: forwards;
+}
+
+#coco-1 img, #coco-2 img{
+    width: 40px;
+}
+
+@keyframes mover {
+    from {left: 0;}
+    to {left: 600px;}   
+}
+
+@keyframes caidaCoco1 {
+    0%{
+        bottom: 400px;
+        z-index: 2;
+    }
+
+    50%{
+        bottom: 200px;
+        z-index: 1;
+        right: 350px;
+    }
+    
+    100%{
+        bottom: 75px;
+        right: 200px;
+        z-index: 1;
+    }
+}
+
+@keyframes caidaCoco2 {
+    from{
+        bottom: 400px;
+        z-index: 2;
+    }
+
+    to{
+        bottom: 75px;
+        z-index: 1;
+    }
+}
