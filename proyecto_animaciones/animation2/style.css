@@ -9,6 +9,20 @@ body{
     height: 100vh;
 }
 
+#play{
+    z-index: 4;
+    left: 660px;
+    top: 300px;
+    animation-name: desaparecer-play;
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+#fondo-play{
+    background-color: black;
+    opacity: 20;
+}
+
 #fondo div{
     position: absolute;
 }
@@ -316,4 +330,9 @@ body{
 @keyframes cambioColor {
     from{filter: none}
     to{filter: hue-rotate(250deg);}
+}
+
+@keyframes desaparecer-play {
+    from{z-index: 4;}
+    to{z-index: -1;}
 }
