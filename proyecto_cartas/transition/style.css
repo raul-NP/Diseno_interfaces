@@ -1,0 +1,36 @@
+:root{
+    --width: 300px;
+    --aspecto: 1.453;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: row;
+}
+
+.carta {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.carta div{
+    width: var(--width);
+    height: calc(var(--width) * var(--aspecto));
+    background-size: cover;
+}
+
+.reverso{
+    background-image: url("../img/reverso.jpg");
+}
+
+.exodia .anverso{
+    background-image: url("../img/exodia.png");
+}
+
+.resu .anverso{
+    background-image: url("../img/resurreccion.jpg");
+}
