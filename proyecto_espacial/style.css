@@ -22,7 +22,7 @@ body div{
     left: 725px;
     position: absolute;
     width: 100px;
-    transition: ease 0.2s;
+    cursor: pointer;
 }
 #palanca:hover{
     filter: drop-shadow(-4px -4px 4px white) drop-shadow(4px 4px 4px white);
@@ -32,7 +32,7 @@ body div{
     z-index: 7;
     height: 100vh;
 }
-#espacio, #planeta1, #planeta2, #agujero, #nave1, #nave2, #laser1, #laser2, #laser3{
+#espacio, #fondo3, #planeta1, #planeta2, #agujero, #nave1, #nave2, #laser1, #laser2, #laser3, #asteroide1, #asteroide2, #meteorito{
     animation-duration: 30s;
     animation-iteration-count: infinite;
 }
@@ -119,6 +119,36 @@ body div{
     width: 1600px;
 }
 
+#fondo3{
+    z-index: 12;
+    animation-name: movimiento-fondo3;
+    left: -600px;
+    top: -900px;
+}
+#espacio2{
+    width: 2600px;
+    height: 2800px;
+}
+#asteroide1, #asteroide2, #meteorito{
+    animation-name: movimiento-asteroides;
+    position: absolute;
+}
+#asteroide1{
+    width: 100px;
+    left: 1100px;
+    top: 2000px;
+}
+#asteroide2{
+    left: 1000px;
+    top: 1100px;
+    width: 150px;
+}
+#meteorito{
+    left: 1500px;
+    top: 1300px;
+    width: 200px;
+}
+
 @keyframes movimiento-fondo {
     0%{
         transform: translateX(0px) translateY(0px);
@@ -133,6 +163,15 @@ body div{
     100%{
         /* transform: translateX(-230px) translateY(-450px); */
         /* scale: 1.7; */
+    }
+}
+
+@keyframes movimiento-fondo3 {
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        transform: rotate(360deg);
     }
 }
 
@@ -240,4 +279,10 @@ body div{
         z-index: 2;
         opacity: 0;
     }
+}
+
+@keyframes movimiento-asteroides {
+    0%{}
+    50%{transform: translateX(200px);}
+    100%{}
 }
