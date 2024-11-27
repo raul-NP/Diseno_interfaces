@@ -6,31 +6,47 @@
 body{
     margin: 0;
     height: 100vh;
-    
     display: flex;
     flex-direction: row;
 }
 
+/* Casda una de las cartas */
 .carta {
     position: relative;
     display: flex;
     flex-direction: row;
 }
 
+/* El anverso y reverso de cada carta */
 .carta div{
     width: var(--width);
     height: calc(var(--width) * var(--aspecto));
     background-size: cover;
 }
-
+/* Dos caras genéricas */
 .reverso{
+    animation-name: girar-reverso;
     background-image: url("../img/reverso.jpg");
 }
+.anverso{
+    animation-name: girar-anverso;
+}
 
+/* Los anversos de cada carta */
 .exodia .anverso{
     background-image: url("../img/exodia.png");
 }
-
 .resu .anverso{
     background-image: url("../img/resurreccion.jpg");
+}
+
+@keyframes girar-reverso {
+
+    from{
+
+    }
+    to{
+
+    }
+    
 }

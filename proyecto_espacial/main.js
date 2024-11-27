@@ -1,11 +1,16 @@
-// document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-//     let palanca = document.getElementById("palanca");
+    let palanca = document.getElementById("palanca");
+    let viaje = document.getElementById("fondo2");
 
-//     palanca.addEventListener('mouseenter', () => {
-//         palanca.setAttribute("src", "");
-//     })
+    palanca.addEventListener('click', () => {
+        
+    })
 
-// })
+    // palanca.addEventListener('mouseenter', () => {
+    //     palanca.setAttribute("src", "");
+    // })
+
+})
 
 

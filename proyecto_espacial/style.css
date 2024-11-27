@@ -9,7 +9,7 @@ body div{
 }
 
 #copkit-container{
-    z-index: 10;
+    z-index: 15;
     height: 100vh;
 }
 #copkit{
@@ -29,11 +29,11 @@ body div{
 }
 
 #fondo{
-    z-index: 9;
+    z-index: 7;
     height: 100vh;
 }
-#espacio, #planeta1, #planeta2, #agujero, #nave1, #nave2{
-    animation-duration: 3s;
+#espacio, #planeta1, #planeta2, #agujero, #nave1, #nave2, #laser1, #laser2, #laser3{
+    animation-duration: 30s;
     animation-iteration-count: infinite;
 }
 #espacio{
@@ -66,14 +66,37 @@ body div{
     animation-fill-mode: forwards;
 }
 
+#nave1, #laser1, #laser2, #laser3{
+    position: absolute;
+    left: -100px;
+}
 #nave1{
     z-index: 9;
-    position: absolute;
-    width: 100px;
     top: 500px;
-    left: -100px;
+    width: 100px;
     animation-name: movimiento-nave1;
 }
+#laser1{
+    z-index: 8;
+    top: 525px;
+    width: 50px;
+    animation-name: disparo;
+}
+#laser2{
+    z-index: 8;
+    top: 510px;
+    width: 50px;
+    animation-name: disparo;
+    animation-delay: 0.35s;
+}
+#laser3{
+    z-index: 8;
+    top: 500px;
+    width: 50px;
+    animation-name: disparo;
+    animation-delay: 0.7s;
+}
+
 #nave2{
     z-index: 9;
     position: absolute;
@@ -81,6 +104,19 @@ body div{
     top: 470px;
     left: 140px;
     animation-name: movimiento-nave2;
+}
+
+#fondo2{
+    z-index: 2;
+    height: 100vh;
+    left: -50px;
+    animation-name: viaje-espacial;
+    animation-timing-function: ease-in;
+    animation-duration: 3s;
+}
+#viaje{
+    left: -2000px;
+    width: 1600px;
 }
 
 @keyframes movimiento-fondo {
@@ -161,5 +197,47 @@ body div{
     100%{
         left: 2500px;
         top: 350px;
+    }
+}
+
+@keyframes disparo {
+    0%{
+        transform: translateX(0px) translateY(0px);
+    }
+    40%{
+        transform: translateX(-250px) translateY(-190px);
+    }
+    80%{
+        transform: translateX(-230px) translateY(-450px);
+    }
+    100%{
+        left: 4000px;
+        top: 400px;
+    }
+}
+
+@keyframes viaje-espacial {
+    0%{
+        z-index: 14;
+        scale: 1;
+        top: 0;
+        opacity: 1;
+    }
+    25%{
+        z-index: 14;
+    }
+    50%{
+        z-index: 14;
+        opacity: 1;
+    }
+    75%{
+        z-index: 14;
+    }
+    100%{
+        top: 500px;
+        left: -120px;
+        scale: 8;
+        z-index: 2;
+        opacity: 0;
     }
 }
