@@ -1,15 +1,31 @@
 :root{
-    --width: 300px;
+    --width: 250px;
     --aspecto: 1.453;
 }
 
 body{
     margin: 0;
     height: 100vh;
+}
+
+.tapete{
+    background-image: url("../img/tapete.png");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.jugador1{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    gap: 30px;
+}
+.jugador2{
+    display: flex;
+    flex-direction: row;
     gap: 30px;
 }
 
@@ -29,7 +45,7 @@ body{
     transition: all 1s;
 }
 
-/* Dos caras genéricas */
+/* Reverso general y con hover */
 .reverso{
     background-image: url("../img/reverso.jpg");
     z-index: 10;
@@ -39,6 +55,8 @@ body{
     transform: rotateY(180deg);
     z-index: 0;
 }
+
+/* Anverso general y con hover */
 .anverso{
     z-index: 0;
     transform: rotateY(180deg);
@@ -48,21 +66,73 @@ body{
     z-index: 10;
 }
 
-/* Los anversos de cada carta */
+/* Los anversos y el div completo de cada carta */
+.exodia{
+
+}
 .exodia .anverso{
     background-image: url("../img/exodia.png");
+}
+
+.resu{
+
 }
 .resu .anverso{
     background-image: url("../img/resurreccion.jpg");
 }
 
-@keyframes girar-reverso {
+.brazo_dcho{
 
-    from{
+}
+.brazo_dcho .anverso{
+    background-image: url("../img/brazo_dcho.png");
+}
 
-    }
-    to{
+.brazo_izq{
 
-    }
-    
+}
+.brazo_izq .anverso{
+    background-image: url("../img/brazo_izq.png");
+}
+
+.pie_dcho{
+
+}
+.pie_dcho .anverso{
+    background-image: url("../img/pie_dcho.png");
+}
+
+.pie_izq{
+
+}
+.pie_izq .anverso{
+    background-image: url("../img/pie_izq.png");
+}
+
+.dragon{
+
+}
+.dragon .anverso{
+    background-image: url("../img/dragon_fusion.png");
+}
+
+.ojos_rojos{
+
+}
+.ojos_rojos .anverso{
+    background-image: url("../img/ojos_rojos.png");
+}
+
+.mago{
+
+}
+.mago .anverso{
+    background-image: url("../img/mago.png");
+}
+
+.olla{
+
+}
+.olla .anverso{
+    background-image: url("../img/olla.png");
 }
