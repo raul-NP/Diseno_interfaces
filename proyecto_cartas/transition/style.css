@@ -8,28 +8,44 @@ body{
     height: 100vh;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
 }
 
 /* Casda una de las cartas */
 .carta {
     position: relative;
-    display: flex;
-    flex-direction: row;
+    width: var(--width);
+    height: calc(var(--width) * var(--aspecto));
 }
 
 /* El anverso y reverso de cada carta */
 .carta div{
+    position: absolute;
     width: var(--width);
     height: calc(var(--width) * var(--aspecto));
     background-size: cover;
+    transition: all 1s;
 }
+
 /* Dos caras genéricas */
 .reverso{
-    animation-name: girar-reverso;
     background-image: url("../img/reverso.jpg");
+    z-index: 10;
+    transform: rotateY(0deg);
+}
+.carta:hover .reverso{
+    transform: rotateY(180deg);
+    z-index: 0;
 }
 .anverso{
-    animation-name: girar-anverso;
+    z-index: 0;
+    transform: rotateY(180deg);
+}
+.carta:hover .anverso{
+    transform: rotateY(0deg);
+    z-index: 10;
 }
 
 /* Los anversos de cada carta */
