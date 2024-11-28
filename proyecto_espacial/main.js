@@ -18,6 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
             espacio2.style.zIndex = 2;
         }
 
+        //Cambio de imagen de palanca al ser pulsada
+        palanca.setAttribute("src", "./img/planeta1.png");
+        setTimeout( () => {
+            palanca.setAttribute("src", "./img/palanca.png");
+        }, 500)
+
     });
 
 
