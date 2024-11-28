@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         //Cambio de imagen de palanca al ser pulsada
-        palanca.setAttribute("src", "./img/planeta1.png");
+        palanca.setAttribute("src", "./img/palanca_abajo.png");
         setTimeout( () => {
             palanca.setAttribute("src", "./img/palanca.png");
         }, 500)
