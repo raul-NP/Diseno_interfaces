@@ -5,16 +5,26 @@ document.addEventListener("DOMContentLoaded", () => {
     let espacio2 = document.getElementById("fondo3");
     let radio1 = document.getElementById("radio1");
     let radio2 = document.getElementById("radio2");
+    let copkit = document.getElementById("copkit-container");
+    let empiece = false;
     const musica1 = new Audio("./sounds/sonidito.mp3");
     const musica2 = new Audio("./sounds/tatuado.mp3");
     const musica_zona1 = new Audio("./sounds/zona1.mp3");
     const musica_zona2 = new Audio("./sounds/zona2.mp3");
     const alarma = new Audio("./sounds/palanca.mp3");
     const musica_viaje = new Audio("./sounds/viaje_espacial.mp3");
+    const musica_aliens = new Audio("./sounds/aliens.mp3");
 
-    musica_zona1.play();
-    musica_viaje.play();
+    //Musica de inicio, al clickar la pantalla
+    copkit.addEventListener("click", () => {
+        if (!empiece){
+            musica_zona1.play();
+            musica_viaje.play();
+            empiece = true;
+        }
+    })
 
+    //Gestión de música al cambiar de escenario con viaje espacial
     palanca.addEventListener("click", () => {
 
         //Reiniciamos la animación cada vez que pulsamos la palanca
@@ -31,7 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //Iniciamos la música del viaje espacial
         alarma.play();
-        musica_viaje.play();
+        setTimeout( () => {
+            musica_viaje.play();
+        }, 300)
 
         //Manejamos las músicas de cada zona espacial
         if(!musica_zona1.paused){
@@ -60,8 +72,14 @@ document.addEventListener("DOMContentLoaded", () => {
             palanca.setAttribute("src", "./img/palanca.png");
         }, 500)
 
+        //Al cambiar de zona, iniciamos un sonido que suena en x segundos aleatorios
+        setTimeout( () => {
+            musica_aliens.play();
+        }, Math.floor(Math.random() * 5000 - 2300) + 2300); 
+
     });
 
+    //Música 1 de la radio 
     radio1.addEventListener("click", () => {
 
         //Si no está la otra música podemos activar esta
@@ -76,10 +94,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 musica1.pause();
             }
         }
-
-
     })
 
+    //Música 2 de la radio 
     radio2.addEventListener("click", () => {
 
         //Si no está la otra música podemos activar esta
@@ -94,11 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 musica2.pause();
             }
         }
-
     })
-
-
-
 })
 
 
