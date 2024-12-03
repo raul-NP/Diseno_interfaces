@@ -1,5 +1,5 @@
 :root{
-    --width: 250px;
+    --width: 150px;
     --aspecto: 1.453;
 }
 
@@ -9,24 +9,19 @@ body{
 }
 
 .tapete{
-    background-image: url("../img/tapete.png");
+    background-image: url("./img/tapete.png");
     background-size: cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 15px;
 }
-.jugador1{
+.fila1, .fila2, .fila3{
     display: flex;
     flex-direction: row;
-    gap: 30px;
-}
-.jugador2{
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
+    gap: 15px;
 }
 
 /* Casda una de las cartas */
@@ -47,11 +42,11 @@ body{
 
 /* Reverso general y con hover */
 .reverso{
-    background-image: url("../img/reverso.jpg");
+    background-image: url("./img/reverso.jpg");
     z-index: 10;
     transform: rotateY(0deg);
 }
-.carta:hover .reverso{
+.select .reverso{
     transform: rotateY(180deg);
     z-index: 0;
 }
@@ -61,7 +56,7 @@ body{
     z-index: 0;
     transform: rotateY(180deg);
 }
-.carta:hover .anverso{
+.select .anverso{
     transform: rotateY(0deg);
     z-index: 10;
 }
@@ -71,68 +66,68 @@ body{
 
 }
 .exodia .anverso{
-    background-image: url("../img/exodia.png");
+    background-image: url("./img/exodia.png");
 }
 
 .resu{
 
 }
 .resu .anverso{
-    background-image: url("../img/resurreccion.jpg");
+    background-image: url("./img/resurreccion.jpg");
 }
 
 .brazo_dcho{
 
 }
 .brazo_dcho .anverso{
-    background-image: url("../img/brazo_dcho.png");
+    background-image: url("./img/brazo_dcho.png");
 }
 
 .brazo_izq{
 
 }
 .brazo_izq .anverso{
-    background-image: url("../img/brazo_izq.png");
+    background-image: url("./img/brazo_izq.png");
 }
 
 .pie_dcho{
 
 }
 .pie_dcho .anverso{
-    background-image: url("../img/pie_dcho.png");
+    background-image: url("./img/pie_dcho.png");
 }
 
 .pie_izq{
 
 }
 .pie_izq .anverso{
-    background-image: url("../img/pie_izq.png");
+    background-image: url("./img/pie_izq.png");
 }
 
 .dragon{
 
 }
 .dragon .anverso{
-    background-image: url("../img/dragon_fusion.png");
+    background-image: url("./img/dragon_fusion.png");
 }
 
 .ojos_rojos{
 
 }
 .ojos_rojos .anverso{
-    background-image: url("../img/ojos_rojos.png");
+    background-image: url("./img/ojos_rojos.png");
 }
 
 .mago{
 
 }
 .mago .anverso{
-    background-image: url("../img/mago.png");
+    background-image: url("./img/mago.png");
 }
 
 .olla{
 
 }
 .olla .anverso{
-    background-image: url("../img/olla.png");
+    background-image: url("./img/olla.png");
 }
