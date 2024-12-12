@@ -19,9 +19,12 @@
     --color3: #c7bdb1;
     --color4: #5a473a;
     --color5: #161412;
+
 }
 
 body{
+    position: absolute;
+    z-index: 1;
     margin: 0;
     height: 100vh;
     width: 100vw;
@@ -37,16 +40,14 @@ body{
     position: absolute;
     z-index: 9999;
     mix-blend-mode: difference;
-    width: 30px;
-    height: 30px;
+    width: 1.8vw;
+    height: 1.8vw;
+    background-image: url("./img/");
+
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.2s;
-}
-#page-home:hover ~ #cursor{
-    width: 15px;
-    height: 15px;
 }
 #cruz-x{
     position: absolute;
@@ -68,16 +69,15 @@ body{
     animation-name: aparecer;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+    z-index: -1;
+    opacity: 0;
 }
 
 /* Menú */
 #menu-container{
-    z-index: -1;
-    position: relative;
     width: 100vw;
     height: 9vh;
     background-color: var(--color3);
-    opacity: 0;
     display: flex;
     flex-direction: row;
 
@@ -90,7 +90,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    font-size: larger;
 }
 
 #logo{
@@ -101,68 +100,97 @@ body{
     justify-content: center;
 }
 #logo img{
-    width: 4em;
+    width: 8.5vh;
 }
 
+/* Contenedores de cada opción del menú */
+.page-container{
+    height: 9vh;
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+
+    font-family: 'tittles' , Courier;
+    text-transform: uppercase;
+    font-weight: 700;
+}
 
 /* Estilo de todas las opciones del menú */
-#page-home, #page-about, #page-projects, #page-career{
+.page-container > div{
+    width: 5vw;
+    height: 9vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 10vw;
-    height: 6.3vh;
-    border-radius: 20px;
-    font-family: 'tittles' , Courier;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-}
+    justify-content: center;
 
-#page-home:hover, #page-about:hover, #page-projects:hover, #page-career:hover{
+    transition: all 0.4s ease;
+    font-size: 2.5vh;
+    color: var(--color5);
+}
+.page-container > div.selected{
+    width: 30vw;
+    height: 9vh;
+
+    font-size: 3.5vh;
     color: var(--color3);
     background-color: var(--color4);
-    transform: translateY(70px);
-    border-radius: 50%;
-    width: 3vw;
-    height: 3vw;
-    font-size: x-large;
+}
+.page-container:hover > div:not(.selected){
+    font-size: 3.5vh;
+    color: var(--color4);
 }
 
 /* Contenedor del contenido */
 #container{
-    z-index: -1;
-    width: 100vw;
+
+    /* 4 * widht + 3 * gap */
+    width: 380vw;
     height: 91vh;
+    position: absolute;
     display: flex;
     align-items: center;
-    justify-content: center;
-    opacity: 0;
+    /* 100vw - widht + 2 * border */
+    gap: 29.4vw;
+    /* gap / 2 */
+    left: 14.7vw;
+    transition: all 1s ease-out;
 
     animation-delay: calc(var(--tiempoCarga) + 1.5s);
 }
 
 #home, #projects, #career, #about{
-    position: absolute;
-    z-index: -1;
+    position: relative;
+    width: 70vw;
+    height: 60vh;
+    opacity: 1;
     border-radius: 2vw;
+    border: 0.3vw double var(--color4);
+    box-shadow: 0.2vw 0.2vw 0.2vw var(--color4);
     background-color: var(--color3);
-    width: 80vw;
-    height: 70vh;
+    transition: all 2s ease;
 }
 
 /* Página home */
 #home{
-    opacity: 0.9;
+    scale: 1.2;
 }
 
 /* Página proyectos */
+#projects{
 
+}
 
 /* Página estudios */
+#career{
 
+}
 
 /* Página about */
+#about{
+
+}
 
 /* Asignamos la animación de desaparición de carga tanto a los números como a la barra */
 #charge-bar-container, #charge-num-container{
@@ -232,6 +260,6 @@ body{
     from{}
     to{
         opacity: 1;
-        z-index: 2;
+        z-index: 1;
     }
 }
