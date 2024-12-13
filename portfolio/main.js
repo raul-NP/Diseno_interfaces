@@ -4,52 +4,55 @@ document.addEventListener("DOMContentLoaded",  () => {
     const chargeContainer = document.getElementById('charge-bar-container');
     const chargeBar = document.getElementById('charge-bar');
     const cursor = document.getElementById('cursor');
-    const menu = document.querySelectorAll('.page-container');
+    const menu = [
+        document.getElementById('page-home'),
+        document.getElementById('page-about'),
+        document.getElementById('page-projects'),
+        document.getElementById('page-career'),
+        document.querySelector('#logo-img')
+    ];
     const sectionContainer = document.querySelector('#container');
     const sections = document.querySelectorAll('#container > div');
-    let actual = 0;
+    let leftInicial = 20;
+    let actualOption = 0;
 
     //Iteramos los elementos del menú
     menu.forEach((option, siguiente) => {
 
-        let menuOption = option.querySelector('div');
-
         //Al hacer click en una opción del menú
-        menuOption.addEventListener('click', () => {
+        option.addEventListener('click', () => {
+
+            //En caso del logo redirigir a home
+            if (siguiente === 4){
+                siguiente = 0;
+                option = menu[0];
+            } 
             
             //Lógica de desplazamiento de secciones de contenido del portfolio
-            let leftInicial = 14.7;
             sectionContainer.style.left = `${-siguiente * 100 + leftInicial}vw`;
-            actual = siguiente;
+            actualOption = siguiente;
 
             //Efecto de las secciones al seleccionarlas
             for (let i = 0; i < sections.length; i++) {
 
-                //Efec
-                if (i === actual){
-                    sections[i].style.scale = '1.2';
-                }else{
-                    sections[i].style.scale = '1';
-                }
+                //Efecto de las secciones actual y el resto
+                sections[i].style.scale = i === actualOption? '1.2': '1';
             }
             
-            //Añadimos efecto de opción de menú selecionada
-            menuOption.classList.add('selected');
-
-            //Se la quitamos a las demás
+            //Añadimos efecto de opción de menú selecionada y se la quitamos a las demás
             menu.forEach(element => {
-                if (menuOption !== element.querySelector('div')){
-                    element.querySelector('div').classList.remove('selected');
-                }
+                option === element? element.classList.add('selected'): element.classList.remove('selected');
             });
         })
+    });
 
-        //Efecto de disminución del cursor al hacer hover en las opciones del menú
-        option.addEventListener('mouseenter', () => {
+    //Efecto de disminución del cursor al hacer hover en el menú del menú
+    menu.forEach(element => {
+        element.addEventListener('mouseenter', () => {
             cursor.style.width = '0.9vw';
             cursor.style.height = '0.9vw';
         })
-        option.addEventListener('mouseleave', () => {
+        element.addEventListener('mouseleave', () => {
             cursor.style.width = '1.8vw';
             cursor.style.height = '1.8vw';
         })
@@ -69,11 +72,10 @@ document.addEventListener("DOMContentLoaded",  () => {
         cursor.style.display = 'none';
     })
     
-    //Función que asigna el número de porcentaje de la barra de carga
+    //Función recursiva que asigna el número de porcentaje de la barra de carga
     function asignaNumero(){
         let number = chargeBar.clientWidth / chargeContainer.clientWidth * 100;
         num.textContent = Math.floor(number) + "%";
-
         if (number < 100){
             setTimeout(asignaNumero, 100);
         }

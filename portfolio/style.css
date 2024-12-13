@@ -20,6 +20,12 @@
     --color4: #5a473a;
     --color5: #161412;
 
+    /* Variables de tamaño del contenido, por si se desea modificar */
+    --widht: 60vw;
+    --gap: calc(100vw - var(--widht));
+    --left: calc(var(--gap) / 2);
+    --sectionsWidth: calc((var(--widht) * 4) + (var(--gap) * 3)); 
+
 }
 
 body{
@@ -28,7 +34,7 @@ body{
     margin: 0;
     height: 100vh;
     width: 100vw;
-    background-image: url("./img/fondo.jpg");
+    background-image: url("./img/fondo1.jpg");
     background-size: cover;
     overflow: hidden;
     cursor: none;
@@ -65,7 +71,7 @@ body{
 }
 
 /* Afecta tanto al menú como al contenido */
-#menu-container, #container{
+#menu-container, #container, footer{
     animation-name: aparecer;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -99,8 +105,19 @@ body{
     align-items: center;
     justify-content: center;
 }
-#logo img{
-    width: 8.5vh;
+#logo-img{
+    width: 8vh;
+    position: absolute;
+    top: 0;
+    padding: 1.2vw 3vw 2vw 3vw;
+    border-radius: 50%;
+    background-color: var(--color3);
+    transition: all 0.4s ease;
+}
+/* Efecto de aumento al hacer hover en la imagen */
+#logo-img:hover{
+    /* border: 1px double var(--color4); */
+    scale: 1.2;
 }
 
 /* Contenedores de cada opción del menú */
@@ -129,15 +146,18 @@ body{
     font-size: 2.5vh;
     color: var(--color5);
 }
+/* Estilo de la opción escogida */
 .page-container > div.selected{
-    width: 30vw;
+    width: 28vw;
     height: 9vh;
 
     font-size: 3.5vh;
     color: var(--color3);
     background-color: var(--color4);
 }
-.page-container:hover > div:not(.selected){
+/* Estilo del resto de opciones al hacer hover */
+.page-container > div:hover:not(.selected){
+    /* border-bottom: 0.2vw inset var(--color4); */
     font-size: 3.5vh;
     color: var(--color4);
 }
@@ -145,37 +165,42 @@ body{
 /* Contenedor del contenido */
 #container{
 
-    /* 4 * widht + 3 * gap */
-    width: 380vw;
-    height: 91vh;
+    width: var(--sectionsWidth);
+    height: 82vh;
     position: absolute;
     display: flex;
     align-items: center;
-    /* 100vw - widht + 2 * border */
-    gap: 29.4vw;
-    /* gap / 2 */
-    left: 14.7vw;
+    gap: var(--gap);
+    left: var(--left);
     transition: all 1s ease-out;
 
-    animation-delay: calc(var(--tiempoCarga) + 1.5s);
+    animation-delay: calc(var(--tiempoCarga) + 1.7s);
 }
 
 #home, #projects, #career, #about{
     position: relative;
-    width: 70vw;
-    height: 60vh;
+    top: 1.8vh;
+    width: var(--widht);
+    height: 50vh;
     opacity: 1;
     border-radius: 2vw;
     border: 0.3vw double var(--color4);
     box-shadow: 0.2vw 0.2vw 0.2vw var(--color4);
     background-color: var(--color3);
     transition: all 2s ease;
+    opacity: 0.8;
 }
 
 /* Página home */
 #home{
     scale: 1.2;
+    display: flex;
+    justify-content: center;
 }
+#home h1{
+    font-size: 3vw;
+}
+
 
 /* Página proyectos */
 #projects{
@@ -190,6 +215,17 @@ body{
 /* Página about */
 #about{
 
+}
+
+/* Pie de página */
+footer{
+    background-color: var(--color4);
+    width: 100vw;
+    height: 9vh;
+    position: absolute;
+    bottom: 0;
+
+    animation-delay: calc(var(--tiempoCarga) + 1s);
 }
 
 /* Asignamos la animación de desaparición de carga tanto a los números como a la barra */
