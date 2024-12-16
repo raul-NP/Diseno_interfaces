@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded",  () => {
     const chargeContainer = document.getElementById('charge-bar-container');
     const chargeBar = document.getElementById('charge-bar');
     const cursor = document.getElementById('cursor');
+    const minCursor = document.querySelectorAll('.minCursor');
     const menu = [
         document.getElementById('page-home'),
         document.getElementById('page-about'),
@@ -47,8 +48,9 @@ document.addEventListener("DOMContentLoaded",  () => {
     });
 
     //Efecto de disminución del cursor al hacer hover en el menú del menú
-    menu.forEach(element => {
+    minCursor.forEach(element => {
         element.addEventListener('mouseenter', () => {
+            console.log(element);
             cursor.style.width = '0.9vw';
             cursor.style.height = '0.9vw';
         })
