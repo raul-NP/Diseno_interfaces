@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded",  () => {
     let leftInicial = 20;
     let actualOption = 0;
 
+    cursor.style.left = "-20px";
+    cursor.style.top = "-20px";
+
     //Iteramos los elementos del menú
     menu.forEach((option, siguiente) => {
 
@@ -38,6 +41,11 @@ document.addEventListener("DOMContentLoaded",  () => {
 
                 //Efecto de las secciones actual y el resto
                 sections[i].style.scale = i === actualOption? '1.2': '1';
+                
+                //Coger el elemento interno img de la seccion y cambiar de blur 5px a 0
+                if(sections[i].querySelector('img')){
+                    sections[i].querySelector('img').style.filter = i === actualOption? 'blur(0px)': 'blur(5px)';
+                }
             }
             
             //Añadimos efecto de opción de menú selecionada y se la quitamos a las demás

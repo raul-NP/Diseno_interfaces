@@ -40,6 +40,10 @@ body{
     cursor: none;
 }
 
+a{
+    cursor: none;
+}
+
 /* Cursor */
 #cursor {
     pointer-events: none;
@@ -53,7 +57,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.2s;
+    transition: width, height 0.5s ease;
 }
 #cruz-x{
     position: absolute;
@@ -177,18 +181,17 @@ body{
     animation-delay: calc(var(--tiempoCarga) + 1.7s);
 }
 
+/* Estilo de los contenidos principales */
 #home, #projects, #career, #about{
     position: relative;
     top: 1.8vh;
     width: var(--widht);
     height: 50vh;
-    opacity: 1;
     border-radius: 2vw;
     border: 0.3vw double var(--color4);
     box-shadow: 0.2vw 0.2vw 0.2vw var(--color4);
-    background-color: var(--color3);
+    background-color: rgba(199, 189, 177, 0.8);
     transition: all 2s ease;
-    opacity: 0.8;
 }
 
 /* Página home */
@@ -196,9 +199,18 @@ body{
     scale: 1.2;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 #home h1{
     font-size: 3vw;
+}
+
+#perfil-principal{
+    position: absolute;
+    width: 20vw;
+    border-radius: 50%;
+    opacity: 0.9;
+    transition: all 0.5s ease;
 }
 
 
@@ -236,16 +248,28 @@ footer{
     animation-delay: calc(var(--tiempoCarga) + 1s);
 }
 
+/* Derechos */
+#rights{
+    opacity: 0.7;
+    transition: opacity 0.25s ease;
+}
+#rights:hover{
+    opacity: 1;
+}
+
+/* Redes sociales */
 #social{
     display: flex;
     align-items: center;
     flex-direction: row;
     gap: 1vw;
 }
+
 #linkedin, #git, #gmail{
     width: 2vw;
     height: 2vw;
     background-size: cover;
+    transition: scale 0.6s ease;
 }
 #linkedin{
     background-image: url('./img/linkedin_beige.png');
@@ -255,14 +279,16 @@ footer{
 }#gmail{
     background-image: url('./img/gmail_beige.png');
 }
-
 #linkedin:hover{
+    scale: 1.2;
     background-image: url('./img/linkedin.png');
 }
 #git:hover{
+    scale: 1.2;
     background-image: url('./img/github.png');
 }
 #gmail:hover{
+    scale: 1.2;
     background-image: url('./img/gmail.png');
 }
 
