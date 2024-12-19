@@ -46,6 +46,11 @@ document.addEventListener("DOMContentLoaded",  () => {
                 if(sections[i].querySelector('img')){
                     sections[i].querySelector('img').style.filter = i === actualOption? 'blur(0px)': 'blur(5px)';
                 }
+
+                //Subir el título
+                // if(sections[i].querySelector('#home-title')){
+                //     sections[i].querySelector('#home-title').style.top = i === actualOption? '1vh': '6vh';
+                // }
             }
             
             //Añadimos efecto de opción de menú selecionada y se la quitamos a las demás

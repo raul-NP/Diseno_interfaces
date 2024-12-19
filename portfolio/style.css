@@ -198,19 +198,67 @@ a{
 #home{
     scale: 1.2;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
-#home h1{
-    font-size: 3vw;
+
+#home-title1, #home-title2{
+    font-size: 4.5vw;
+    position: absolute;
+    color: var(--color4);
+    font-family: 'tittles';
+    z-index: 2;
+    letter-spacing: -1.3vw;
+    margin: 0;
+}
+#home-title1{
+    align-self: start;
+    top: 1.5vw;
+    left: 2vw;
+    /* transition: top 1.4s ease 0.3s; */
+}
+#home-title2{
+    align-self: end;
+    top: 8vw;
+    right: 2.5vw;
+    /* transition: top 1.4s ease 0.3s; */
+}
+
+.letra{
+    padding: 0;
+    margin: 0;
+    width: 1ch;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    transition: transform 0.1s ease-out;
+    font-size: inherit;
+    /* overflow: hidden; */
+}
+.letra:hover{
+    transform: translateY(-2vw);
+}
+
+.space{
+    display: inline-block;
+    width: 1vw;
 }
 
 #perfil-principal{
+    z-index: 1;
     position: absolute;
-    width: 20vw;
+    align-self: center;
+    opacity: 0.8;
+    width: 18vw;
     border-radius: 50%;
-    opacity: 0.9;
-    transition: all 0.5s ease;
+    transition: all 1.2s ease 0.7s;
+    border-bottom: 0.5vw solid var(--color3);
+    /* transition: opacity 1s ease;
+    transition: scale 0.5s ease; */
+}
+#perfil-principal:hover{
+    /* opacity: 1;
+    scale: 1.1; */
 }
 
 
