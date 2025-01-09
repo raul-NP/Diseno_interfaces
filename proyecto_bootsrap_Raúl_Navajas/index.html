@@ -238,18 +238,15 @@
 
   <!-- Ajuste de color de fondo -->
   <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-
-    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center show" id="bd-theme" type="button"
-      aria-expanded="true" data-bs-toggle="dropdown" aria-label="Toggle theme (light)">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+      aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (light)">
       <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
         <use href="#sun-fill"></use>
       </svg>
       <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
     </button>
-
-    <ul class="dropdown-menu dropdown-menu-end shadow show" aria-labelledby="bd-theme-text"
-      style="position: absolute; inset: auto 0px 0px auto; margin: 0px; transform: translate3d(0px, -44px, 0px);"
-      data-popper-placement="top-end">
+  
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
       <li>
         <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light"
           aria-pressed="true">
@@ -296,7 +293,7 @@
     <h1 class="w-100 mb-5">Home</h1>
     
     <!-- Table -->
-    <table class="w-75 h-75 align-middle table table-responsive table-hover table-bordered">
+    <table class="w-75 align-middle table table-responsive table-hover table-bordered">
       <thead>
         <tr>
           <th>Nº Orden</th>
@@ -315,12 +312,183 @@
         </tr>
         <tr>
           <th>#99832</th>
-          <th>Iñigo teleñeco</th>
+          <th>Mouse electrónico</th>
+        </tr>
+        <tr>
+          <th>#27378</th>
+          <th>Teclado 65%</th>
+        </tr>
+        <tr>
+          <th>#11299</th>
+          <th>Portátil ASUS</th>
         </tr>
       </tbody>
 
       <caption>Descripción de la tabla</caption>
     </table>
+
+    <!-- MODALES -->
+    <div class="d-flex flex-column">
+
+      <hr>
+
+      <!-- Botón del modal estático -->
+      <div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Modal estático pequeño</button>
+      </div>
+
+      <!-- Modal estático -->
+      <div class="modal modal-sm fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal estático</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">Hasta que no presiones el botón de cerrar, este modal no se cerrará</div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Botones para activar los modales con su propio contenido -->
+      <div class="d-flex flex-row gap-2">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="Altavoces">Abrir modal de altavoces</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="Televisor">Abrir modal de televisor</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="Mouse">Abrir modal del mouse</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="Teclado">Abrir modal del teclado</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="Portátil">Abrir modal del portátil</button>
+      </div>
+
+      <!-- 5 Modales con contenido diferente -->
+      <div class="modal modal-lg fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">Dispositivo:</label>
+                  <input type="text" class="form-control" id="recipient-name">
+                </div>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">Descripción:</label>
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Send message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Script para que funcione -->
+      <script>
+        const exampleModal = document.getElementById('exampleModal')
+        if (exampleModal) {
+          exampleModal.addEventListener('show.bs.modal', event => {
+            const button = event.relatedTarget
+            const recipient = button.getAttribute('data-bs-whatever')
+            const modalTitle = exampleModal.querySelector('.modal-title')
+            const modalBodyInput = exampleModal.querySelector('.modal-body input')
+            
+            modalTitle.textContent = `Descripción de ${recipient}`
+            modalBodyInput.value = recipient
+          })
+        }
+      </script>
+
+      <hr>
+
+      <!-- Modales recursivos -->
+      <div>
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Abrir modal 1</button>
+      </div>
+
+      <!-- Modal 1 -->
+      <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">Modal 1 que reedirige al modal 2</div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Abrir modal 2</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 2 -->
+      <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 2</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">Modal 2 que reedirige al modal 3</div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Abrir el modal 3</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 3 vuelve al primero -->
+      <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 3</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">Modal 3 que reedirige al modal 1</div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Volver al primer modal</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Modal fullscreen sin animación -->
+      <div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Modal fullscreen</button>
+      </div>
+
+      <div class="modal" id="exampleModalFullscreen" tabindex="4" aria-labelledby="exampleModalFullscreenLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel">Modal fullscereen</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">Modal en pantalla completa sin animación</div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+    </div>
   </div>
 
   <!-- Script para visualizar los cambios de color de fondo -->
