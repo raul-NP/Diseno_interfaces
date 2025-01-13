@@ -39,6 +39,40 @@ main:hover #c1{
     transform: rotateY(180deg) translate3d(-200px, 0, 200px);
 }
 
+main:hover #c5{
+    animation-name: c5;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes c5{
+    0%{
+
+    }
+    50%{
+        transform: rotateY(180deg) translate3d(-200px, 0, 200px);
+    }
+    100%{
+        transform: rotateY(180deg) translate3d(-200px, 0, 200px);
+    }
+}
+
+main:hover #c6 {
+    animation-name: c6;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes c6{
+    0%{
+        
+    }
+    50%{
+        transform: rotateY(90deg);
+    }
+    100%{
+        transform: rotateY(90deg) rotateX(90deg) ;
+    }
+}
+
 main:hover #c2{
     transform: rotateY(90deg);
 }
@@ -82,11 +116,13 @@ main:hover #c2{
     background-color: indigo;
     top: -200px;
     left: 0;
+    transform-origin: right;
 }
 
 #c6{
     background-color: violet;
     left: 600px;
     top: 200px;
+    transform-origin: left;
 }
 
